@@ -25,13 +25,20 @@ Real-time face censoring for your webcam. It covers your eyes, mouth, face, or w
 
 Requires Python 3.9–3.12 and a webcam.
 
+Clone the repository, or download it with **Code → Download ZIP** and extract it:
+
 ```powershell
-git clone https://github.com/<your-username>/censor-cam.git
+git clone https://github.com/GifFed/censor-cam.git
 cd censor-cam
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python main.py
+```
+If activation fails with an execution policy error, run this once:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
 A ready-made Windows `.exe` is available on the [Releases](../../releases) page.
