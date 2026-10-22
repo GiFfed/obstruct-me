@@ -1,6 +1,6 @@
-# Censor
+# ObstructMe
 
-Real-time face censoring for your webcam. It covers your eyes, mouth, face, or whole silhouette with a black fill or a blur. Everything runs locally: video is never recorded or sent anywhere.
+Real-time censoring for your webcam. ObstructMe covers your eyes, mouth, face, or whole silhouette with a black fill or a blur. Everything runs locally: video is never recorded or sent anywhere.
 
 ![Demo](docs/demo.gif)
 
@@ -28,13 +28,14 @@ Requires Python 3.9–3.12 and a webcam.
 Clone the repository, or download it with **Code → Download ZIP** and extract it:
 
 ```powershell
-git clone https://github.com/GifFed/censor-cam.git
-cd censor-cam
+git clone https://github.com/<GifFed>/obstructme.git
+cd obstructme
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
 python main.py
 ```
+
 If activation fails with an execution policy error, run this once:
 
 ```powershell
