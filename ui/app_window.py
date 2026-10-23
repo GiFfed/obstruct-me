@@ -1,11 +1,12 @@
 import os
+import sys
 import threading
 import time
 from dataclasses import replace
 
 import cv2
 from PySide6.QtCore import QEasingCurve, QPropertyAnimation, QRect, Qt, QThread, Signal
-from PySide6.QtGui import QImage, QKeySequence, QPixmap, QShortcut
+from PySide6.QtGui import QIcon, QImage, QKeySequence, QPixmap, QShortcut
 from PySide6.QtWidgets import (
     QButtonGroup,
     QFrame,
@@ -37,6 +38,10 @@ EFFECT_OPTIONS = [("fill", "Fill"), ("blur", "Blur")]
 
 STYLE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "style.qss")
 
+def resource_path(relative):
+    """Path to a bundled file: works both from source and inside the PyInstaller exe."""
+    base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)) + "/..")
+    return os.path.join(base, relative)
 
 def load_stylesheet():
     with open(STYLE_PATH, encoding="utf-8") as f:
@@ -255,7 +260,8 @@ def _section(text):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Censor")
+        self.setWindowTitle("ObstructMe")
+        self.setWindowIcon(QIcon(resource_path(os.path.join("docs", "logo.ico"))))
         self.setMinimumSize(900, 560)
         self.resize(1040, 680)
 
@@ -297,7 +303,7 @@ class MainWindow(QMainWindow):
         header.setObjectName("header")
         hl = QHBoxLayout(header)
         hl.setContentsMargins(20, 12, 20, 12)
-        title = QLabel("CENSOR")
+        title = QLabel("OBSTRUCTME")
         title.setObjectName("title")
         subtitle = QLabel("real-time masking")
         subtitle.setObjectName("subtitle")
