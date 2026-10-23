@@ -1,4 +1,7 @@
 # ObstructMe
+   <p align="center">
+     <img src="docs/logo.png" width="120" alt="ObstructMe logo">
+   </p>
 
 Real-time censoring for your webcam. ObstructMe covers your eyes, mouth, face, or whole silhouette with a black fill or a blur. Everything runs locally: video is never recorded or sent anywhere.
 
